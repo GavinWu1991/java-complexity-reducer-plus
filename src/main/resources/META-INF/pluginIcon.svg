@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px"
+     preserveAspectRatio="xMidYMid slice">
+    <circle id="bg" cx="20" cy="20" r="17" style="fill:#CCC; stroke:none;" opacity="0.9"/>
+
+    <line id="intro"
+          x1="17" y1="4"
+          x2="17" y2="36"
+          style="stroke:black;fill:none;stroke-width:0.7px;"/>
+    <line id="if_then"
+          x1="17" y1="10"
+          x2="27" y2="15"
+          style="stroke:black;fill:none;stroke-width:0.7px;"/>
+    <line id="else"
+          x1="27" y1="15"
+          x2="17" y2="20"
+          style="stroke:black;fill:none;stroke-width:0.7px;"/>
+
+    <circle id="good" cx="17" cy="10" style="fill:springgreen; stroke:black; stroke-width: 0.2px;" r="3"/>
+    <circle id="ok" cx="27" cy="15" style="fill:greenyellow; stroke:black; stroke-width: 0.2px;" r="3"/>
+    <circle id="bad" cx="17" cy="20" style="fill:red; stroke:black; stroke-width: 0.2px;" r="3"/>
+    <circle id="sorta_bad" cx="17" cy="30" style="fill:gold; stroke:black; stroke-width: 0.2px;" r="3"/>
+
+
+</svg>

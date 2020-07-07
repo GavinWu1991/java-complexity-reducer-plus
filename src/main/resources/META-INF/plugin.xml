@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.gavwu.plugins.intellij.complexity</id>
+    <name>Complexity reducer +</name>
+    <vendor email="wghusw@163.com">Gavin.Wu</vendor>
+
+    <description>
+        Provides tools for reducing complexity of Java methods,
+        and hints to help notice that creep before it gets bad.
+    </description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <codeInsight.lineMarkerProvider language="JAVA"
+                                        implementationClass="com.gavwu.plugins.intellij.complexity.markers.CyclomaticComplexityLineMarker"/>
+
+        <codeInsight.lineMarkerProvider language="JAVA"
+                                        implementationClass="com.gavwu.plugins.intellij.complexity.markers.NPathComplexityLineMarker"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
