@@ -2,15 +2,20 @@ plugins {
     id 'java'
     id 'org.jetbrains.intellij' version '0.4.18'
     id 'org.jetbrains.kotlin.jvm' version '1.3.71'
+
 }
 
 apply plugin: "org.jetbrains.kotlin.jvm"
+apply plugin: 'jacoco'
 
 group 'com.gavwu.plugins.intellij.complexity-reducer-plus'
 version '0.1.3'
 
 repositories {
     mavenCentral()
+    jcenter()
+
+    maven { url "http://repo1.maven.org/maven2/" }
     maven {
         url 'https://www.jetbrains.com/intellij-repository/snapshots'
     }
@@ -37,10 +42,30 @@ patchPluginXml {
      0.1.0 Initial Release, and 2020.7 release
      """
 }
+
 test {
     ignoreFailures = true
     reports {
         junitXml.enabled = true
         html.enabled = false
     }
+}
+
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+
+    reports {
+        xml.enabled true
+        xml.destination new File("${buildDir}/reports/jacoco/report.xml")
+        html.enabled false
+        csv.enabled false
+    }
+}
+
+codeCoverageReport.dependsOn {
+    subprojects*.test
 }
