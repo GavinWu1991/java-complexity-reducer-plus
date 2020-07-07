@@ -25,6 +25,3 @@ hs_err_pid*
 # ignore gradle
 /build/
 /.gradle/
-/gradlew.bat
-/gradlew
-/gradle/wrapper/
