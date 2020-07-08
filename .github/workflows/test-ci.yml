@@ -28,7 +28,7 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./reports/jacoco/report.xml
+          file: ./build/reports/jacoco/report.xml
           flags: unittests
           env_vars: OS,PYTHON
           name: codecov-umbrella
