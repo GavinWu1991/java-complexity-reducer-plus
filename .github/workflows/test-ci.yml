@@ -30,6 +30,5 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./build/reports/jacoco/report.xml
           flags: unittests
-          env_vars: OS,PYTHON
           name: codecov-umbrella
           fail_ci_if_error: true
